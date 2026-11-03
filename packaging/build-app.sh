@@ -15,7 +15,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 APP_NAME="beat bars config"
-BUNDLE_ID="io.github.newspicel.beatbars-config"
+BUNDLE_ID="dev.newspicel.beatbars-config"
 EXE="beatbars-config"
 VERSION="$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -1)"
 NOTARY_PROFILE="${NOTARY_PROFILE:-beatbars}"

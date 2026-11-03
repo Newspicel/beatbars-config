@@ -46,7 +46,7 @@ fn main() -> ExitCode {
 
 fn gui() -> Result<(), zgui::Error> {
     app()
-        .with_application_id("com.beatbars.config")
+        .with_application_id("dev.newspicel.beatbars-config")
         .with_title("beat bars config")
         .with_size(680.0, 860.0)
         .with_stylesheet(ui::SHEET)
