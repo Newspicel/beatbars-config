@@ -1,0 +1,22 @@
+[package]
+name = "beatbars-config"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.90"
+description = "Configuration helper for beat bars MIDI pedals and foot switch adapters"
+license = "MIT"
+publish = false
+
+[dependencies]
+midir = "0.11"
+
+# zgui is not on crates.io; pin upstream main for reproducible builds.
+zgui = { git = "https://github.com/zortax/zgui", rev = "1ce9561fa01fe65391c5b5f96ce6eef79a435ea5" }
+zgui-ui = { git = "https://github.com/zortax/zgui", rev = "1ce9561fa01fe65391c5b5f96ce6eef79a435ea5" }
+zgui-ui-primitives = { git = "https://github.com/zortax/zgui", rev = "1ce9561fa01fe65391c5b5f96ce6eef79a435ea5" }
+zgui-ui-tokens = { git = "https://github.com/zortax/zgui", rev = "1ce9561fa01fe65391c5b5f96ce6eef79a435ea5" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+strip = true
