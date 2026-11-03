@@ -21,11 +21,11 @@ packaging/build-app.sh --no-notarize  # signed only
 ```
 
 The script signs with the newest *Developer ID Application* certificate in your keychain
-(override with `SIGN_IDENTITY`) and notarizes with the `beatbars-notary` keychain profile
+(override with `SIGN_IDENTITY`) and notarizes with the `beatbars` keychain profile
 (override with `NOTARY_PROFILE`), which you create once:
 
 ```console
-xcrun notarytool store-credentials beatbars-notary --apple-id <apple id> --team-id <team id>
+xcrun notarytool store-credentials beatbars --apple-id <apple id> --team-id <team id>
 ```
 
 The notarized DMG opens on any Mac running macOS 11 or later, Apple Silicon or Intel, without

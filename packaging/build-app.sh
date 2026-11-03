@@ -8,8 +8,8 @@
 # Environment:
 #   SIGN_IDENTITY   codesigning identity (name or SHA-1). Default: the newest
 #                   "Developer ID Application" certificate in the keychain.
-#   NOTARY_PROFILE  notarytool keychain profile. Default: beatbars-notary
-#                   (create it once with `xcrun notarytool store-credentials beatbars-notary
+#   NOTARY_PROFILE  notarytool keychain profile. Default: beatbars
+#                   (create it once with `xcrun notarytool store-credentials beatbars
 #                   --apple-id <id> --team-id <team>`).
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -18,7 +18,7 @@ APP_NAME="beat bars config"
 BUNDLE_ID="io.github.newspicel.beatbars-config"
 EXE="beatbars-config"
 VERSION="$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -1)"
-NOTARY_PROFILE="${NOTARY_PROFILE:-beatbars-notary}"
+NOTARY_PROFILE="${NOTARY_PROFILE:-beatbars}"
 NOTARIZE=1
 [[ "${1:-}" == "--no-notarize" ]] && NOTARIZE=0
 
